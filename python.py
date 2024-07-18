@@ -22,10 +22,19 @@ class Torpedoborec(Ship):
     
     def get_info(self):
         return f"Torpédoborec Name: {self.name}, Length: {self.length} meters, Displacement: {self.displacement} tons, Speed: {self.speed} knots"
+class Kriznik(Ship):
+    def __init__(self, name, length, displacement, armor):
+        super().__init__(name, length, displacement)
+        self.armor = armor
+    
+    def get_info(self):
+        return f"Křižník Name: {self.name}, Length: {self.length} meters, Displacement: {self.displacement} tons, Armor: {self.armor} cm"
 
     
     # Test the classes
 fregata = Fregata("Frigate A", 130, 3000, "Missiles")
 torpedoborec = Torpedoborec("Destroyer B", 160, 5000, 30)
+kriznik = Kriznik("Cruiser C", 200, 10000, 20)
 print(fregata.get_info())
 print(torpedoborec.get_info())
+print(kriznik.get_info())
